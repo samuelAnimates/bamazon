@@ -1,0 +1,23 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "sql focused homework assignment for Coding Bootcamp 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smendez92/bamazon.git"
+  },
+  "author": "Samuel R. Mendez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smendez92/bamazon/issues"
+  },
+  "homepage": "https://github.com/smendez92/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^3.2.1",
+    "mysql": "^2.14.0"
+  }
+}
