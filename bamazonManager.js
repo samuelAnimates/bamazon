@@ -194,7 +194,7 @@ function addToInventory(){
 			{
 				name: "selectItemByID",
 				type: "prompt",
-				message: "\nSelect the [ID] of the item you'd like to update:",
+				message: "\nEnter the [ID] of the item you'd like to update:",
 			},
 			{
 				name: "howMuch",
@@ -207,18 +207,31 @@ function addToInventory(){
 			var addStock = parseInt(answer.howMuch);
 
 			connection.query(
-		    	"UPDATE bamazondb.products SET ? WHERE ?",
-		    	[
-		    		{
-		    			stock_quantity: stock_quantity + addStock
-					},
+		    	"SELECT * FROM bamazondb.products WHERE ?",
 					{
 						item_id: userSelection
-					}
-				],
-				function(error) {
+					},
+				function(error, response) {
 					//Once the update goes through, show the customer the total cost of their purchase.	
-					console.log("UPDDATED");
+					if (error) throw error;
+
+					else{
+						connection.query(
+							"UPDATE bamazondb.products SET ? WHERE ?",
+							[
+								{
+									stock_quantity: (response[0].stock_quantity + addStock)
+								},
+								{
+									item_id: userSelection
+								}
+							],
+							function (error){
+								if (error) throw error;
+								console.log("UPDDATED");
+							}
+						)
+					}
 				}
 			);
 
