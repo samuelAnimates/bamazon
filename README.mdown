@@ -1,38 +1,35 @@
-Author: Samuel R. Mendez
-Software Version: 1.0
 Software Last Updated: 2017.08.06
 README Last Updated: 2017.08.06 
-GitHub Repo: [https://github.com/smendez92/bamazon](https://github.com/smendez92/bamazon)
 
-#bamazon.js
-##Description
+# bamazon.js
+## Description
 A node server application to facilitate user interactions with a 'bamazon' sql database.
 Logs all items in database to the console, and prompts the user to use their keyboard to select the ID of the item they'd like to purchase from a scrollable list. Then prompts the user to enter to quantity of the item they would like to buy, logs the total cost of the order, and updates the database accordingly. Checks to ensure that there is enough of the selected item in stock before it will complete the order, however user input is not validated otherwise.
 
 Note: SQL code included in file at  './createBamazon.sql' to show the initialization of the database this program was designed for, however the final database may include extra parameters/columns not included in this file. It is provided for reference only.
 
-##NPM Dependencies
+## NPM Dependencies
 inquirer, mysql
 
 ----------------------
-#bamazonManager.js
-##Description
+# bamazonManager.js
+## Description
 A node server application to facilitate user interactions with a 'bamazon' sql database.
 Prompts users to select which action they'd like to take with the bamazon database: view products for sale, view low inventory, add to inventory, or add new product.
 
-###View products for sale
+### View products for sale
 Logs information about all the items currently in the database.
 
-###View low inventory
+### View low inventory
 Logs information about the items with <5 quantity in stock.
 
-###Add to inventory
+### Add to inventory
 Prompts user to enter in the ID of the item they would like to add stock to. Then prompts user to enter the quantity of stock they would like to add. User input not validated.
 
-###Add new product
+### Add new product
 Prompts user to enter the name, cost, department, and quantity in stock of a new item to be added to the bamazon database. User input not validated.
 
 Note: SQL code included in file at  './createBamazon.sql' to show the initialization of the database this program was designed f or, however the final database may include extra parameters/columns not included in this file. It is provided for reference only.
 
-##NPM Dependencies
+## NPM Dependencies
 inquirer, mysql
